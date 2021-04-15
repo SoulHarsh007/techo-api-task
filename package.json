@@ -1,0 +1,32 @@
+{
+  "name": "techo-api-task",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "SoulHarsh007",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --expose-gc --gc-interval=100 dist/index.js"
+  },
+  "devDependencies": {
+    "@types/busboy": "0.2.3",
+    "@types/mongodb": "3.6.12",
+    "@types/node": "14.14.37",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.24.0",
+    "eslint-config-google": "0.14.0",
+    "eslint-config-prettier": "8.2.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-tsdoc": "0.2.11",
+    "husky": "6.0.0",
+    "prettier": "2.2.1",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {
+    "fastify": "3.14.2",
+    "fastify-multipart": "4.0.3",
+    "mongodb": "3.6.6"
+  }
+}
