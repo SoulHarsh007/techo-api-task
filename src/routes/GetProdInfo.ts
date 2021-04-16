@@ -20,7 +20,7 @@ export default class GetProdInfo extends BaseRoute {
    * @param res - Outgoing response with default fastify middleware and helper
    */
   async handler(req: FastifyRequest, res: FastifyReply): Promise<void> {
-    const productName = (req.body as {productName?: string}).productName;
+    const productName = (req.query as {productName?: string}).productName;
     if (productName) {
       const product = await this.mongo
         .db(`${process.env['DB_PRODUCTS']}`)
@@ -28,7 +28,7 @@ export default class GetProdInfo extends BaseRoute {
         .findOne({productName});
       product
         ? res.status(200).send({result: 'Product found!', product})
-        : res.status(404).send({error: 'product not found!'});
+        : res.status(404).send({error: 'Product not found!'});
       return;
     }
     res.status(400).send();

@@ -72,7 +72,6 @@ if (cluster.isMaster) {
         'BeforeExit'
       );
       Server.logger.generateLogFile();
-      global.gc();
     })
     .on('unhandledRejection', (reason: unknown, promise: unknown) => {
       Server.logger.log(
